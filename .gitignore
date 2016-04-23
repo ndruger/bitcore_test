@@ -1,0 +1,17 @@
+.DS_Store
+
+# secret
+.env
+
+# module
+node_modules
+
+# tmp
+tmp/*
+
+# log
+log/*
+npm-debug.log
+newrelic_agent.log
+
+!.gitkeep
