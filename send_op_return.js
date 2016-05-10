@@ -28,7 +28,7 @@ function send(from, to, utxos) {
   var transaction = new bitcore.Transaction()
     .fee(100000)
     .from(utxos)
-    .addData('test日本語')
+    .addData(process.argv[2])
     .change(from)
     .sign(process.env.SENDER_KEY)
 
@@ -36,6 +36,8 @@ function send(from, to, utxos) {
     console.log(id);
 　});
 }
+
+console.log(process.argv[2]);
 
 getUtxo(process.env.SENDER_ADDRESS, function(utxos) {
   send(process.env.SENDER_ADDRESS, process.env.SENDER_ADDRESS, utxos);
